@@ -26,7 +26,20 @@
         .navbar-blur {
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
-            background-color: rgba(10, 10, 10, 0.9);
+            background-color: rgba(10, 10, 10, 0.75);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .story-content p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
     </style>
 </head>
@@ -51,7 +64,7 @@
 
     <main class="container mx-auto px-4 py-10">
         <section>
-            <div class="max-w-4xl mx-auto">
+            <div class="fade-in max-w-4xl mx-auto">
                 <a href="index.html#recits" class="back-link inline-flex items-center text-gray-400 hover:text-white transition duration-300 mb-6">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                     Retour à la liste des récits
@@ -80,5 +93,23 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            fadeInElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>

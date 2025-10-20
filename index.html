@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoire de Vie - Récits Réels et Captivants</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Configuration Tailwind personnalisée */
+        :root {
+            --primary-bg: #0a0a0a; /* Noir très foncé */
+            --secondary-accent: #60a5fa; /* Bleu Clair - Accent principal */
+            --tertiary-accent: #5C6BC0; /* Bleu Indigo Clair - Accent secondaire */
+            --text-light: #f5f5f5; /* Texte Blanc cassé */
+            --card-bg: #1f2937; /* Gris foncé pour les cartes */
+        }
+
+        /* Application du fond sombre sur le corps */
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            padding-top: 64px; /* Espace pour la barre de navigation fixée */
+        }
+        
+        /* Import des polices */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap');
+
+        /* Styles de titres pour l'esthétique professionnelle */
+        .header-title {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* CLASSE DE COULEUR (maintenant Bleu Clair) */
+        .text-mauve-accent {
+            color: var(--secondary-accent) !important; 
+            font-weight: 700 !important;
+        }
+        
+        /* CLASSES DE PAGES ET ANIMATION */
+        .page { display: none; }
+        .page.active { 
+            display: block; 
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Style des liens de navigation actif */
+        .nav-link.active {
+             border-bottom: 3px solid var(--secondary-accent);
+             color: var(--secondary-accent);
+        }
+        
+        /* Flou pour la navigation fixe */
+        .navbar-blur {
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            background-color: rgba(10, 10, 10, 0.9); /* Noir très foncé semi-transparent */
+        }
+        
+        /* Ombre d'interaction pour la carte vedette */
+        .hover-shadow-interact:hover {
+            /* Ombre ajustée pour le nouveau bleu clair */
+            box-shadow: 0 10px 25px -5px rgba(96, 165, 250, 0.2), 0 8px 10px -6px rgba(96, 165, 250, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed top-0 left-0 w-full shadow-lg z-50 h-16 border-b border-gray-800 navbar-blur">
+        <div class="container mx-auto px-4 flex justify-between items-center h-full">
+            <a href="#accueil" class="text-2xl font-bold header-title text-white hover:text-gray-300 transition duration-300">
+                Histoire de Vie
+            </a>
+            
+            <div class="flex space-x-6 items-center">
+                <a href="#accueil" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition duration-300 active" aria-current="page">Accueil</a>
+                <a href="#recits" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition duration-300">Récits Intégraux</a>
+                <a href="#sagesse" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition duration-300">Sagesse</a>
+                <a href="#apropos" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition duration-300">À Propos</a>
+                
+                <a href="https://wa.me/243845370370?text=Mon%20histoire%20pour%20la%20publication%20:%20" target="_blank" class="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-green-700 transition duration-300 transform hover:scale-105 shadow-lg shadow-green-700/50">
+                    Raconter (WhatsApp)
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-10">
+        
+        <section id="accueil" class="page active">
+            <header class="text-center py-16 md:py-24 mb-10 border-b border-gray-800">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight header-title text-white">
+                    Là où la vie écrit les scénarios les plus captivants.
+                </h1>
+                <p class="text-xl text-gray-400 max-w-4xl mx-auto mb-10">
+                    Explorez des récits réels plus intenses que la fiction. Des histoires poignantes, inspirantes (et parfois drôles) qui révèlent les leçons profondes cachées dans chaque expérience vécue.
+                </p>
+                
+                <a href="#recits" class="nav-link inline-block text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-80 transition duration-300 shadow-lg" style="background-color: var(--tertiary-accent);">
+                    Découvrez tous les récits
+                </a>
+            </header>
+
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-4 text-white">Récit en Vedette</h2>
+                <div class="w-1/3 h-1 bg-gradient-to-r from-tertiary-accent via-secondary-accent to-tertiary-accent mx-auto mb-8 rounded-full"></div>
+
+                <a href="#single-story" data-story-id="10" class="read-story-link block p-8 rounded-xl shadow-2xl bg-gray-800 border-l-8 transition duration-500 transform hover:scale-[1.01] hover-shadow-interact group cursor-pointer" style="border-color: var(--secondary-accent);">
+                    <p class="text-sm font-semibold mb-3 block" style="color: var(--tertiary-accent);">#DEUIL & RÉSILIENCE - PARTIE 1/3</p>
+                    <h3 class="text-3xl md:text-4xl font-extrabold header-title text-white mb-4 transition duration-300 group-hover:opacity-80">
+                        L'Absence et la Perte : Le poids de son histoire
+                    </h3>
+                    <p class="text-gray-400 italic mb-4 line-clamp-3">
+                        Sa vie fut courte, marquée par l’absence et la douleur dès ses premiers jours. Elle n’a jamais connu son père, puis elle a perdu sa maman... une histoire qui m'a tout appris sur la fragilité de la vie.
+                    </p>
+                    <div class="flex justify-between items-center pt-4 border-t border-gray-700">
+                        <span class="font-bold text-sm" style="color: var(--tertiary-accent);">CLIQUEZ POUR LIRE LE CHAPITRE 1</span>
+                        <svg class="w-6 h-6 ml-2 text-white group-hover:text-secondary-accent transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="max-w-4xl mx-auto mt-16">
+                <h2 class="text-2xl font-bold text-center mb-4 text-white">Autres Récits à Découvrir</h2>
+                <div class="w-1/4 h-1 bg-gradient-to-r from-tertiary-accent to-secondary-accent mx-auto mb-8 rounded-full"></div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="recits-mini-list">
+                    </div>
+                
+                <div class="text-center mt-10">
+                    <a href="#recits" class="nav-link inline-block text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-80 transition duration-300 shadow-lg" style="background-color: var(--secondary-accent);">
+                        Voir la liste complète des récits
+                    </a>
+                </div>
+            </div>
+            </section>
+        
+        <section id="recits" class="page">
+            <h2 class="text-3xl font-bold text-center mb-4 text-white">Tous les Récits</h2>
+            <div class="w-1/3 h-1 bg-gradient-to-r from-tertiary-accent via-secondary-accent to-tertiary-accent mx-auto mb-8 rounded-full"></div>
+            
+            <p class="text-center text-lg text-gray-400 max-w-2xl mx-auto mb-12">
+                Plongez dans l'intégralité de nos histoires de résilience, de lutte et de triomphe.
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10" id="recits-list">
+                </div>
+        </section>
+
+        <section id="single-story" class="page">
+            <div class="max-w-4xl mx-auto">
+                <a href="#recits" class="back-link inline-flex items-center text-gray-400 hover:text-white transition duration-300 mb-6">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Retour à la liste des récits
+                </a>
+
+                <div class="bg-gray-800 p-10 rounded-xl shadow-2xl">
+                    <h1 id="single-story-title" class="text-4xl md:text-5xl font-extrabold mb-4 header-title text-white pt-6">Titre de l'Histoire</h1>
+                    <p class="text-lg text-gray-500 mb-10 italic">Par un lecteur anonyme.</p>
+
+                    <div id="single-story-content" class="text-lg text-gray-300 lg:leading-loose space-y-8 story-content max-w-prose mx-auto">
+                        <p>Le contenu est chargé dynamiquement ici.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sagesse" class="page">
+            <h2 class="text-3xl font-bold text-center mb-4 text-white">Pépites de Sagesse</h2>
+            <div class="w-1/3 h-1 bg-gradient-to-r from-tertiary-accent via-secondary-accent to-tertiary-accent mx-auto mb-8 rounded-full"></div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="p-6 rounded-xl shadow-xl bg-gray-800 border-t-4 transition duration-300 hover:bg-gray-700 transform hover:scale-[1.02]" style="border-color: var(--tertiary-accent);">
+                    <h3 class="text-xl font-bold text-white mb-3 header-title">La puissance de la gratitude</h3>
+                    <p class="text-lg italic text-center leading-relaxed text-mauve-accent">"Le bonheur n'est pas d'avoir ce que l'on désire, mais d'apprécier ce que l'on a."</p>
+                </div>
+                <div class="p-6 rounded-xl shadow-xl bg-gray-800 border-t-4 transition duration-300 hover:bg-gray-700 transform hover:scale-[1.02]" style="border-color: var(--tertiary-accent);">
+                    <h3 class="text-xl font-bold text-white mb-3 header-title">Ecclésiaste 3:1</h3>
+                    <p class="text-lg italic text-center leading-relaxed text-mauve-accent">"Il y a un temps pour tout, et un moment pour toute chose sous le ciel."</p>
+                </div>
+                 <div class="p-6 rounded-xl shadow-xl bg-gray-800 border-t-4 transition duration-300 hover:bg-gray-700 transform hover:scale-[1.02]" style="border-color: var(--tertiary-accent);">
+                    <h3 class="text-xl font-bold text-white mb-3 header-title">Proverbes 16:9</h3>
+                    <p class="text-lg italic text-center leading-relaxed text-mauve-accent">"Le cœur de l'homme médite sa voie, mais c'est l'Éternel qui dirige ses pas."</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="apropos" class="page">
+            <h2 class="text-3xl font-bold text-center mb-4 text-white">Notre Mission</h2>
+            <div class="w-1a-3 h-1 bg-gradient-to-r from-tertiary-accent via-secondary-accent to-tertiary-accent mx-auto mb-8 rounded-full"></div>
+            
+            <div class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-xl shadow-2xl">
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Nous ne sommes pas un site de conseils, mais une plateforme d'échange d'expériences. Notre mission est d'utiliser la force brute et l'authenticité des histoires de vie réelles pour créer une communauté de lecteurs engagés, motivés et profondément connectés. Chaque récit est une lumière qui prouve que l'être humain est capable de tout.
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-gray-900 text-gray-500 py-6 mt-16 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">&copy; 2025 Histoire de Vie. Alimenté par vos expériences réelles.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
